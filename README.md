@@ -97,3 +97,7 @@ scheduler triggers it at 7:00 AM IST instead. The digest also refuses to send tw
 
 - Edit sources, topics, lessons and challenge formats in the template's JSON file
 - Run one template only: Actions > Daily AI Digest > Run workflow > set "template" to its id (e.g. `daily`)
+
+## License
+
+MIT, see [LICENSE](LICENSE).
