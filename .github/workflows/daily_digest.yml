@@ -1,0 +1,78 @@
+name: Daily AI Digest
+
+on:
+  # Triggered daily at 7:00 AM IST by cron-job.org via workflow_dispatch.
+  # No GitHub schedule: it starts hours late and would cause a second email.
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Build a preview without sending"
+        type: boolean
+        default: false
+      force:
+        description: "Send even if already sent today or not scheduled today"
+        type: boolean
+        default: false
+      template:
+        description: "Only run this template id (blank = all enabled templates)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write  # commit state/
+  models: read     # GitHub Models fallback LLM
+
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
+jobs:
+  send-digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history so the state commit can rebase cleanly
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run digest
+        env:
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_APP_PASSWORD: ${{ secrets.SENDER_APP_PASSWORD }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # One line per template that sets "recipients_env", named exactly like that variable
+          DAILY_RECIPIENTS: ${{ secrets.DAILY_RECIPIENTS }}
+          TEMPLATE: ${{ inputs.template }}
+        run: python digest.py ${{ inputs.dry_run && '--dry-run' || '' }} ${{ inputs.force && '--force' || '' }} ${TEMPLATE:+--template "$TEMPLATE"}
+
+      - name: Upload preview
+        if: ${{ !cancelled() && inputs.dry_run }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: digest-preview
+          path: preview-*
+
+      # Runs even if a template failed, so templates that did send aren't sent again next run
+      - name: Save state
+        if: ${{ !cancelled() && !inputs.dry_run }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/
+          git diff --cached --quiet && exit 0
+          git commit -m "Update digest state"
+          # Push back to the branch this run was started on, never somewhere else
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"

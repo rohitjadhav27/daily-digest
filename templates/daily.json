@@ -1,0 +1,324 @@
+{
+  "name": "Daily Digest",
+  "enabled": true,
+  "recipients_env": "DAILY_RECIPIENTS",
+  "days": [
+    "mon",
+    "tue",
+    "wed",
+    "thu",
+    "fri",
+    "sat",
+    "sun"
+  ],
+  "audience": "a busy professional who wants to stay current on product, tech, AI, fintech and global markets, and keep building their fundamentals",
+  "topics": {
+    "ai": {
+      "label": "AI",
+      "color": "#6d28d9",
+      "focus": "model launches, research results, AI products and how teams build with AI",
+      "sources": [
+        {
+          "name": "Simon Willison",
+          "url": "https://simonwillison.net/atom/everything/",
+          "slow": false
+        },
+        {
+          "name": "Latent Space",
+          "url": "https://www.latent.space/feed",
+          "slow": true
+        },
+        {
+          "name": "Import AI",
+          "url": "https://importai.substack.com/feed",
+          "slow": true
+        },
+        {
+          "name": "Interconnects",
+          "url": "https://www.interconnects.ai/feed",
+          "slow": true
+        },
+        {
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/feed.xml",
+          "slow": true
+        },
+        {
+          "name": "OpenAI News",
+          "url": "https://openai.com/news/rss.xml",
+          "slow": true
+        },
+        {
+          "name": "Google DeepMind",
+          "url": "https://deepmind.google/blog/rss.xml",
+          "slow": true
+        },
+        {
+          "name": "Google AI Blog",
+          "url": "https://blog.google/technology/ai/rss/",
+          "slow": true
+        },
+        {
+          "name": "MIT Tech Review AI",
+          "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+          "slow": false
+        },
+        {
+          "name": "The Verge AI",
+          "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+          "slow": false
+        },
+        {
+          "name": "TechCrunch AI",
+          "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+          "slow": false
+        }
+      ]
+    },
+    "tech": {
+      "label": "Tech",
+      "color": "#0369a1",
+      "focus": "engineering practice, infrastructure, big tech moves and what engineers are debating",
+      "sources": [
+        {
+          "name": "Hacker News (250+)",
+          "url": "https://hnrss.org/frontpage?points=250",
+          "slow": false
+        },
+        {
+          "name": "Ars Technica",
+          "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+          "slow": false
+        },
+        {
+          "name": "The Pragmatic Engineer",
+          "url": "https://newsletter.pragmaticengineer.com/feed",
+          "slow": true
+        },
+        {
+          "name": "ByteByteGo",
+          "url": "https://blog.bytebytego.com/feed",
+          "slow": true
+        },
+        {
+          "name": "Stratechery",
+          "url": "https://stratechery.com/feed/",
+          "slow": true
+        },
+        {
+          "name": "Martin Fowler",
+          "url": "https://martinfowler.com/feed.atom",
+          "slow": true
+        }
+      ]
+    },
+    "product": {
+      "label": "Product",
+      "color": "#c2410c",
+      "focus": "practical product frameworks, growth, pricing and lessons from real companies",
+      "sources": [
+        {
+          "name": "Lenny's Newsletter",
+          "url": "https://www.lennysnewsletter.com/feed",
+          "slow": true
+        },
+        {
+          "name": "Product Growth",
+          "url": "https://www.news.aakashg.com/feed",
+          "slow": true
+        },
+        {
+          "name": "First Round Review",
+          "url": "https://review.firstround.com/feed.xml",
+          "slow": true
+        },
+        {
+          "name": "Andrew Chen",
+          "url": "https://andrewchen.substack.com/feed",
+          "slow": true
+        },
+        {
+          "name": "Elena Verna",
+          "url": "https://www.elenaverna.com/feed",
+          "slow": true
+        }
+      ]
+    },
+    "fintech": {
+      "label": "Fintech",
+      "color": "#047857",
+      "focus": "payments, lending, banking, regulation, and Indian fintech including UPI and RBI moves",
+      "sources": [
+        {
+          "name": "Fintech Brainfood",
+          "url": "https://www.fintechbrainfood.com/feed",
+          "slow": true
+        },
+        {
+          "name": "This Week in Fintech",
+          "url": "https://thisweekinfintech.com/rss/",
+          "slow": true
+        },
+        {
+          "name": "Net Interest",
+          "url": "https://www.netinterest.co/feed",
+          "slow": true
+        },
+        {
+          "name": "Finextra",
+          "url": "https://www.finextra.com/rss/rss.aspx",
+          "slow": false
+        },
+        {
+          "name": "Payments Dive",
+          "url": "https://www.paymentsdive.com/feeds/news/",
+          "slow": false
+        },
+        {
+          "name": "Entrackr",
+          "url": "https://entrackr.com/feed/",
+          "slow": false
+        },
+        {
+          "name": "Inc42",
+          "url": "https://inc42.com/feed/",
+          "slow": false
+        }
+      ]
+    },
+    "markets": {
+      "label": "Global Markets",
+      "color": "#a16207",
+      "focus": "international macro, trade, central banks and cross-border business, including India",
+      "sources": [
+        {
+          "name": "Rest of World",
+          "url": "https://restofworld.org/feed/latest",
+          "slow": false
+        },
+        {
+          "name": "The Economist Finance",
+          "url": "https://www.economist.com/finance-and-economics/rss.xml",
+          "slow": false
+        },
+        {
+          "name": "BBC Business",
+          "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+          "slow": false
+        },
+        {
+          "name": "Guardian Business",
+          "url": "https://www.theguardian.com/uk/business/rss",
+          "slow": false
+        },
+        {
+          "name": "CNBC World",
+          "url": "https://www.cnbc.com/id/100727362/device/rss/rss.html",
+          "slow": false
+        },
+        {
+          "name": "Nikkei Asia",
+          "url": "https://asia.nikkei.com/rss/feed/nar",
+          "slow": false
+        },
+        {
+          "name": "ET Markets",
+          "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms",
+          "slow": false
+        }
+      ]
+    }
+  },
+  "learning": {
+    "goal": "fundamentals plus a working understanding, so the reader can use the concept in real discussions with engineers, designers and business stakeholders",
+    "tracks": [
+      {
+        "key": "product",
+        "name": "Product",
+        "lessons": [
+          "Jobs to be Done: what customers actually hire a product for",
+          "Problem space vs solution space",
+          "Running a good customer interview",
+          "North Star metric and input metrics",
+          "Metric trees: breaking a goal into levers",
+          "Activation and the aha moment",
+          "Retention curves and cohort analysis",
+          "Funnels and conversion analysis",
+          "A/B testing fundamentals",
+          "Statistical significance, power and sample size, intuitively",
+          "Prioritization frameworks: RICE, ICE, and their limits",
+          "Opportunity solution trees",
+          "Writing a PRD that engineers actually use",
+          "Product-market fit: how to tell if you have it",
+          "Pricing models: subscription, usage-based, freemium, take rate",
+          "Unit economics: CAC, LTV, payback period, contribution margin",
+          "Network effects and their types",
+          "Marketplaces: liquidity, supply vs demand side",
+          "Growth loops vs funnels",
+          "Positioning and differentiation",
+          "Go-to-market: PLG vs sales-led",
+          "Outcome-based roadmaps",
+          "Stakeholder management and saying no",
+          "Build vs buy vs partner",
+          "Platform strategy and APIs as products",
+          "Designing AI products for probabilistic outputs",
+          "Evals as the new PRD for AI features",
+          "AI product tradeoffs: quality, latency, cost",
+          "Trust, safety and risk in fintech products",
+          "Experimentation pitfalls: novelty effect, SRM, peeking",
+          "Regulated products: compliance as a product constraint",
+          "International expansion: localization beyond translation"
+        ]
+      },
+      {
+        "key": "tech",
+        "name": "Tech",
+        "lessons": [
+          "What happens when you type a URL: DNS, TCP, TLS, HTTP",
+          "APIs and REST: resources, verbs, status codes",
+          "SQL vs NoSQL databases",
+          "Database indexes: why queries are fast or slow",
+          "Transactions and ACID",
+          "Caching: where, when, and cache invalidation",
+          "Load balancing",
+          "Vertical vs horizontal scaling",
+          "Queues and async processing",
+          "Idempotency and why payments depend on it",
+          "Monolith vs microservices",
+          "Consistency models and the CAP theorem",
+          "Rate limiting",
+          "Authentication vs authorization: sessions, OAuth, JWT",
+          "Webhooks",
+          "CDNs and edge computing",
+          "Observability: logs, metrics, traces",
+          "CI/CD and feature flags",
+          "How card payments work: authorization, clearing, settlement",
+          "UPI and real-time payment rails",
+          "Ledgers and double-entry bookkeeping in software",
+          "Encryption, hashing and tokenization (PCI basics)",
+          "Machine learning basics: training vs inference",
+          "How LLMs work: tokens and next-token prediction",
+          "Transformers and attention, intuitively",
+          "Embeddings and vector search",
+          "Retrieval-augmented generation (RAG)",
+          "Prompting vs fine-tuning vs RAG",
+          "AI agents and tool use",
+          "Evaluating LLM systems",
+          "Context windows, tokens and inference cost",
+          "Hallucinations and grounding",
+          "Inference optimization: quantization, batching, caching",
+          "Model Context Protocol (MCP) and agent integrations"
+        ]
+      }
+    ]
+  },
+  "challenge_types": [
+    "Metrics: define and diagnose (e.g. a metric dropped 15%, what do you check?)",
+    "Product sense: design or improve a product for a specific user",
+    "Tech / system design: sketch how you would build something, at PM depth",
+    "Estimation: a market sizing or back-of-envelope calculation",
+    "Fintech case: a payments, lending or banking product decision",
+    "Data: write a SQL query or interpret a chart/table described in text",
+    "Strategy: a competitive or international market move"
+  ]
+}

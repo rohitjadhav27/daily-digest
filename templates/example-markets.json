@@ -1,0 +1,66 @@
+{
+  "name": "Markets Morning",
+  "enabled": false,
+  "recipients_env": "MARKETS_RECIPIENTS",
+  "days": ["mon", "tue", "wed", "thu", "fri"],
+  "audience": "a retail investor in India who wants to understand markets, personal finance and the economy well enough to make their own decisions",
+  "topics": {
+    "markets": {
+      "label": "Markets",
+      "focus": "Indian and global equity markets, central banks, earnings that moved markets",
+      "sources": [
+        {"name": "ET Markets", "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"},
+        {"name": "CNBC World", "url": "https://www.cnbc.com/id/100727362/device/rss/rss.html"},
+        {"name": "The Economist Finance", "url": "https://www.economist.com/finance-and-economics/rss.xml"}
+      ]
+    },
+    "money": {
+      "label": "Personal Finance",
+      "focus": "taxes, mutual funds, insurance, loans and practical money decisions for Indian households",
+      "sources": [
+        {"name": "Mint Money", "url": "https://www.livemint.com/rss/money"}
+      ]
+    },
+    "economy": {
+      "label": "Economy",
+      "focus": "inflation, jobs, trade and policy, explained for a non-economist",
+      "sources": [
+        {"name": "BBC Business", "url": "https://feeds.bbci.co.uk/news/business/rss.xml"},
+        {"name": "Guardian Business", "url": "https://www.theguardian.com/uk/business/rss"}
+      ]
+    }
+  },
+  "learning": {
+    "goal": "the fundamentals of investing and economics, with enough working understanding to read financial news critically",
+    "tracks": [
+      {
+        "key": "investing",
+        "name": "Investing",
+        "lessons": [
+          "Compounding and why time in the market matters",
+          "Stocks vs bonds vs gold vs real estate",
+          "Index funds and expense ratios",
+          "Reading a P/E ratio",
+          "Diversification and correlation",
+          "SIPs and rupee cost averaging"
+        ]
+      },
+      {
+        "key": "economy",
+        "name": "Economy",
+        "lessons": [
+          "What inflation is and how CPI is measured",
+          "How the RBI repo rate moves loan and deposit rates",
+          "GDP and what it misses",
+          "Why the rupee moves against the dollar"
+        ]
+      }
+    ]
+  },
+  "challenge_types": [
+    "Portfolio: allocate a sum across options for a specific goal and justify it",
+    "Calculation: work out returns, EMIs or tax with concrete numbers",
+    "News reading: explain what a market move means for an ordinary investor",
+    "Decision: choose between two financial products for a specific person"
+  ]
+}
